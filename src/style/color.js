@@ -1,0 +1,22 @@
+
+export default {
+	red: '#ff5b59e0',
+	 Blue: '#369DD6',
+	 LightBlue: '#a3d5f0',
+	 DarkBlue: '#3E92CF',
+	 LightGrey: '#E5E5E5',
+	 MediumGrey: '#8D8D8D',
+	 DarkGrey: '#3F3F3F',
+	 LightGreen: '#67cb48',
+	 Mono5: '#616161',
+	 Mono4: '#8D8D8D',
+	 Mono3: '#D8D8D8',
+	 Mono2: '#EFEFEF',
+	 Mono1: '#F8F8F8',
+	 White: '#FFFFFF',
+	 Black: '#000000',
+	 TextDark: '#434343',
+	 Error: '#BF312F',
+	 Success: '#749F45',
+	 Warning: '#E4701D',
+ };
