@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import {View,Text,Image, TextInput, TouchableOpacity} from 'react-native';
 import { loginBg } from "../assets";
+import color from "../style/color";
 const Login =()=>{
+
+const [mobileNo,setMobileNo] = useState('')
+
+//err Handle
+const [mobileNoErr,setMobileNoErr] = useState(false)
+
+const onChangeHandle =(e)=>{
+    setMobileNo(e)
+    if(e.length <10){
+        setMobileNoErr(true)
+    }
+    else{
+        setMobileNoErr(false)
+    }
+}
+
     return(
         <View>
             <View style={{
@@ -40,18 +57,35 @@ const Login =()=>{
               style={{
                 paddingHorizontal:20
               }}
+              maxLength={10}
               keyboardType='number-pad'
+              onChangeText={(e)=> onChangeHandle(e)}
             />
            </View>
+           {mobileNoErr &&
+           <View>
+            <Text style={{
+                textAlign:'center',
+                fontSize:15,
+                color:color.Error,
+                marginVertical:10
+            }}>
+                Please Enter Valid Number!
+            </Text>
+           </View>
+}
+
            <View style={{
-            backgroundColor:'blue',
+            backgroundColor:mobileNoErr ?color.LightGrey: color.red,
             width:150,
             alignSelf:'center',
             borderRadius:30,
             paddingVertical:10,
 
            }}>
-             <TouchableOpacity>
+             <TouchableOpacity
+             disabled={!mobileNoErr ?  false : true}
+             >
                 <Text style={{
                     color: '#fff',
                     textAlign:'center',
