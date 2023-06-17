@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {View,Text,Image, TextInput, TouchableOpacity} from 'react-native';
 import { loginBg } from "../assets";
 import color from "../style/color";
-const Login =()=>{
+const Login =({navigation})=>{
 
 const [mobileNo,setMobileNo] = useState('')
 
@@ -17,6 +17,10 @@ const onChangeHandle =(e)=>{
     else{
         setMobileNoErr(false)
     }
+}
+
+const login =()=>{
+    navigation.navigate('Otp')
 }
 
     return(
@@ -85,7 +89,8 @@ const onChangeHandle =(e)=>{
            }}>
              <TouchableOpacity
              disabled={!mobileNoErr ?  false : true}
-             >
+            onPress={login}
+            >
                 <Text style={{
                     color: '#fff',
                     textAlign:'center',

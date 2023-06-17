@@ -4,7 +4,7 @@ import OTPInputView from '@twotalltotems/react-native-otp-input'
 import { otpBg } from "../assets";
 import color from "../style/color";
 
-const OtpScreen =()=>{
+const OtpScreen =({navigation})=>{
     const [otp,setOtp] = useState('');
 
     //err handle
@@ -20,6 +20,9 @@ const OtpScreen =()=>{
         }
     }
 
+    const verifyOtp =()=>{
+        navigation.navigate('Home')
+    }
     return(
         <View>
             <View style={{
@@ -83,6 +86,7 @@ const OtpScreen =()=>{
 }}>
     <TouchableOpacity
     disabled={otpErr}
+    onPress={verifyOtp}
     >
         <Text style={{
             fontSize:20,
