@@ -21,7 +21,7 @@ const OtpScreen =({navigation})=>{
     }
 
     const verifyOtp =()=>{
-        navigation.navigate('Home')
+        navigation.navigate('Main')
     }
     return(
         <View>

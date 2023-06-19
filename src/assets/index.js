@@ -1,2 +1,6 @@
 export const loginBg = require('./loginImage.png')
 export const otpBg = require('./vOtp.png')
+export const home = require('./icon/home.png')
+export const menu = require('./icon/menu.png')
+export const profile = require('./icon/profile.png')
+export const wallet = require('./icon/wallet.png')
